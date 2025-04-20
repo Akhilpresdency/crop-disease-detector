@@ -5,7 +5,8 @@ import numpy as np
 
 # Load labels
 with open("labels.txt", "r") as f:
-    class_names = [line.strip() for line in f.readlines()]
+    labels = f.read().splitlines()
+
 
 # Load TFLite model
 interpreter = tf.lite.Interpreter(model_path="plant_disease_model.tflite")
